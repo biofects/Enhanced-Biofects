@@ -1,0 +1,196 @@
+Enhanced-Biofects:
+  card-mod-theme: Enhanced-Biofects
+
+  ### Backdrop for Dialog ###
+  dialog-backdrop-filter: blur(8px)
+  iron-overlay-backdrop-opacity: 1
+  iron-overlay-backdrop-background-color: rgba(0, 0, 0, 0.5)
+
+  ### Header Height ###
+  header-height: 40px
+
+  ### Main Interface Colors ###
+  lovelace-background: 'center / cover no-repeat url("/local/backgrounds/enhanced-biofects.png") fixed'
+  app-header-background-color: "rgba(0, 15, 30, 0.7)"
+  card-background-color: "rgba(0, 15, 30, 0.7)"
+  primary-color: "#00FFFF"  # Bright Turquoise
+  light-primary-color: "#80FFFF"  # Very Light Turquoise
+  primary-background-color: "#001F1F"
+  secondary-background-color: "#000000"
+  rgb-secondary-background-color: 0, 0, 0
+  divider-color: "#005F5F"
+  markdown-code-background-color: "#002F2F"
+
+  ### Text Colors ###
+  primary-text-color: "#00FFFF"  # Bright Turquoise
+  secondary-text-color: "#80FFFF"  # Very Light Turquoise
+  text-primary-color: var(--primary-text-color)
+  disabled-text-color: "#008080"
+
+  ### Sidebar Menu ###
+  sidebar-icon-color: "#00FFFF"
+  sidebar-text-color: "#00FFFF"
+  sidebar-selected-background-color: "rgba(0, 15, 30, 0.9)"
+  sidebar-selected-icon-color: "#80FFFF"
+  sidebar-selected-text-color: var(--sidebar-selected-icon-color)
+  sidebar-background-color: "rgba(0, 15, 30, 0.7)"
+
+  ### States and Badges ###
+  state-icon-color: var(--primary-color)
+  state-icon-active-color: "#80FFFF"
+  state-icon-unavailable-color: var(--disabled-text-color)
+
+  ### Sliders ###
+  paper-slider-knob-color: var(--primary-color)
+  paper-slider-knob-start-color: var(--primary-color)
+  paper-slider-pin-color: var(--primary-color)
+  paper-slider-active-color: var(--primary-color)
+  paper-slider-secondary-color: var(--light-primary-color)
+
+  ### Labels ###
+  label-badge-background-color: var(--markdown-code-background-color)
+  label-badge-text-color: var(--primary-text-color)
+  label-badge-red: "#FF4136"
+  label-badge-yellow: "#FFDC00"
+
+  ### Card Styling for Enhanced LED Effect ###
+  ha-card-border-radius: '10px'
+  ha-card-background: "rgba(0, 15, 30, 0.7)"
+  ha-card-box-shadow: >
+    0 0 10px rgba(0, 255, 255, 0.3),
+    0 0 20px rgba(0, 255, 255, 0.2),
+    0 0 30px rgba(0, 255, 255, 0.1)
+
+  ### Toggles ###
+  paper-toggle-button-checked-button-color: "#00FFFF"
+  paper-toggle-button-checked-bar-color: var(--light-primary-color)
+  paper-toggle-button-unchecked-button-color: var(--paper-toggle-button-checked-button-color)
+  paper-toggle-button-unchecked-bar-color: "#005F5F"
+
+  ### Table Rows ###
+  table-row-background-color: var(--primary-background-color)
+  table-row-alternative-background-color: var(--primary-background-color)
+  data-table-background-color: var(--primary-background-color)
+
+  ### Switches ###
+  switch-unchecked-button-color: var(--divider-color)
+  switch-unchecked-track-color: var(--divider-color)
+
+  ### Inputs ###
+  input-fill-color: "rgba(0, 255, 255, 0.05)"
+  input-label-ink-color: var(--primary-color)
+  input-ink-color: var(--primary-color)
+  input-disabled-fill-color: "rgba(0, 0, 0, 0.33)"
+  input-disabled-ink-color: var(--disabled-primary-color)
+
+  ### Custom CSS for specific element styling ###
+  card-mod-root: |
+    /* Make sidebar transparent */
+    ha-sidebar {
+      background-color: rgba(0, 15, 30, 0.7) !important;
+    }
+    
+    /* Make main title transparent and adjust color */
+    .main-title {
+      background-color: transparent !important;
+      color: #00FFFF !important;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    
+    /* Adjust text color throughout */
+    * {
+      color: #00FFFF !important;
+    }
+    
+    /* Preserve some contrast for readability */
+    ha-card * {
+      color: #80FFFF !important;
+    }
+
+    /* Add LED-like glow to text */
+    ha-card *, .main-title, ha-sidebar * {
+      text-shadow: 
+        0 0 5px rgba(0, 255, 255, 0.5),
+        0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    /* Enhance LED effect for icons */
+    ha-icon {
+      filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7));
+    }
+
+    /* Style form fields */
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+      background-color: rgba(0, 15, 30, 0.9);
+    }
+    .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input,
+    .mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text,
+    .mdc-select:not(.mdc-select--disabled) .mdc-select__anchor {
+      color: #FFFFFF !important;
+    }
+    .mdc-floating-label,
+    .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+      color: #80FFFF !important;
+    }
+    
+    /* Style calendar header */
+    .fc .fc-col-header-cell-cushion {
+      color: #00FFFF !important;
+    }
+    .fc .fc-col-header-cell {
+      background-color: rgba(0, 15, 30, 0.9) !important;
+    }
+    
+    /* Ensure all inputs have white text */
+    input, select, textarea {
+      color: #FFFFFF !important;
+    }
+
+    /* Style mdc-fab buttons */
+    .mdc-fab.mdc-fab--extended {
+      background-color: #00FFFF !important;
+    }
+    .mdc-fab.mdc-fab--extended .mdc-fab__label {
+      color: #000000 !important;
+      font-weight: bold;
+    }
+    .mdc-fab.mdc-fab--extended:hover {
+      background-color: #80FFFF !important;
+    }
+    .mdc-fab.mdc-fab--extended:hover .mdc-fab__label {
+      color: #000000 !important;
+    }
+
+    /* Make button text black */
+    button, 
+    .mdc-button,
+    .mdc-button .mdc-button__label,
+    :host .mdc-fab,
+    :host .mdc-fab:disabled .mdc-fab__icon,
+    :host .mdc-fab:disabled .mdc-fab__label,
+    :host .mdc-fab:not(:disabled) .mdc-fab__icon,
+    :host .mdc-fab:not(:disabled) .mdc-fab__label,
+    .mdc-fab__label {
+      color: #000000 !important;
+    }
+
+    /* Style today's date in calendar */
+    td.fc-day-today .fc-daygrid-day-number {
+      color: #000000 !important;
+      font-weight: bold;
+    }
+
+    /* Ensure contrast for disabled buttons */
+    :host .mdc-fab:disabled {
+      background-color: #CCCCCC !important;
+    }
+
+    /* Maintain black text on hover for fab buttons */
+    .mdc-fab:hover .mdc-fab__label {
+      color: #000000 !important;
+    }
+ 
+    /* Style placeholder text */
+    ::placeholder {
+      color: rgba(255, 255, 255, 0.5) !important;
+    }

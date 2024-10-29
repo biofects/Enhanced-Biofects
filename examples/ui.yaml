@@ -1,0 +1,236 @@
+wallpanel:
+  enabled: true
+  enabled_on_tabs: []
+  hide_toolbar: false
+  hide_sidebar: false
+  fullscreen: false
+  display_time: 30
+  image_order: random
+  image_list_update_interval: 3600
+  image_url: >-
+    https://api.unsplash.com/photos/random?client_id=<get it from unsplash>&query=scary
+  info_animation_duration_x: 30
+  info_animation_duration_y: 11
+  info_animation_timing_function_x: ease-in-out
+  info_animation_timing_function_y: ease-in-out
+  info_move_pattern: random
+  info_move_interval: 0
+  info_move_fade_duration: 2
+  cards:
+    - type: custom:clock-weather-card
+      entity: weather.tfam_home
+      title: Home
+      sun_entity: sun.sun
+      temperature_sensor: sensor.outdoor_temp
+      humidity_sensor: sensor.outdoor_humidity
+      weather_icon_type: line
+      animated_icon: true
+      forecast_rows: 5
+      locale: en-GB
+      time_pattern: h:mm a
+      time_format: 12
+      date_pattern: ccc, d.MM.yy
+      hide_today_section: false
+      hide_forecast_section: false
+      show_humidity: true
+      hide_clock: false
+      hide_date: false
+      hourly_forecast: false
+      use_browser_time: false
+      time_zone: null
+      show_decimal: false
+      apparent_sensor: sensor.real_feel_temperature
+      aqi_sensor: sensor.air_quality_index
+kiosk_mode:
+  user_settings:
+    - users:
+        - tfam
+      kiosk: true
+sidebar:
+  width:
+    mobile: 0
+    tablet: 12
+    desktop: 12
+  digitalClock: true
+  date: true
+  dateFormat: DD-MMM-YYYY
+  twelveHourVersion: true
+  period: true
+  clock: false
+  hideTopMenu: false
+  hideHassSidebar: false
+  sidebarMenu:
+    - action: navigate
+      navigation_path: /dashboard-home
+      name: Home
+      active: true
+    - action: navigate
+      navigation_path: /dashboard-climate
+      name: Climate
+      active: true
+    - action: navigate
+      navigation_path: /dashboard-irrigation
+      name: Irrigation
+      active: true
+    - action: navigate
+      navigation_path: /dashboard-lights
+      name: Lights
+      active: true
+    - action: navigate
+      navigation_path: /dashboard-security
+      name: Security
+      active: true
+    - action: navigate
+      navigation_path: /profile/general
+      name: Profile
+      active: true
+    - action: navigate
+      navigation_path: /calendar
+      name: Calendar
+      active: true
+  bottomCard:
+    type: grid
+    cardOptions:
+      columns: 1
+      square: true
+      cards:
+        - type: markdown
+          title: Daily Quote
+          content: >-
+            {{ state_attr('sensor.daily_quote_feed', 'entries')[0].summary }} -
+            {{ state_attr('sensor.daily_quote_feed', 'entries')[0].title }}
+views:
+  - title: Home
+    type: sections
+    max_columns: 6
+    sections:
+      - type: grid
+        cards:
+          - square: true
+            type: grid
+            cards:
+              - type: tile
+                tap_action:
+                  action: toggle
+                entity: light.kitchen
+                show_state: true
+                vertical: true
+              - type: tile
+                tap_action:
+                  action: toggle
+                entity: light.basement_lamp
+                show_state: true
+                vertical: true
+              - type: tile
+                tap_action:
+                  action: toggle
+                entity: light.master_bedroom_lamp
+                show_state: true
+                vertical: true
+              - type: tile
+                entity: vacuum.beavis
+                vertical: true
+              - type: tile
+                entity: vacuum.butthead
+                vertical: true
+            layout_options:
+              grid_columns: 4
+              grid_rows: 5
+            columns: 3
+            card_mod:
+              style: |
+                ha-card {
+                  height: 600px;
+                  margin: 16px;  # Adds external spacing
+                  padding: 16px;  # Adds internal spacing
+                  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.2), 0px 0px 20px 5px rgba(77, 163, 255, 0.6);  # Shadow for depth
+                }
+          - type: custom:clock-weather-card
+            entity: weather.tfam_home
+            title: Home
+            sun_entity: sun.sun
+            temperature_sensor: sensor.outdoor_temp
+            humidity_sensor: sensor.outdoor_humidity
+            weather_icon_type: line
+            animated_icon: true
+            forecast_rows: 5
+            locale: en-GB
+            time_pattern: h:mm a
+            time_format: 12
+            date_pattern: ccc, d.MM.yy
+            hide_today_section: false
+            hide_forecast_section: false
+            show_humidity: true
+            hide_clock: true
+            hide_date: true
+            hourly_forecast: false
+            use_browser_time: false
+            time_zone: null
+            show_decimal: false
+            apparent_sensor: sensor.real_feel_temperature
+            aqi_sensor: sensor.air_quality_index
+            card_mod:
+              style: |
+                ha-card {
+                width: 100%;
+                  margin-top: 16px;  # Adds external spacing
+                  padding: 16px;  # Adds internal spacing
+                  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.2), 0px 0px 20px 5px rgba(77, 163, 255, 0.6);  # Shadow for depth
+                }
+      - type: grid
+        cards:
+          - initial_view: listWeek
+            type: calendar
+            entities:
+              - calendar.tfam_calendar
+            layout_options: null
+            grid_columns: 1
+            grid_rows: auto
+            card_mod:
+              style: |
+                ha-card {
+                  margin: 16px;  # Adds external spacing
+                  padding: 16px;  # Adds internal spacing
+                  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.2), 0px 0px 20px 5px rgba(77, 163, 255, 0.6);  # Shadow for depth
+                }
+          - type: shopping-list
+            title: 'To Do '
+            card_mod:
+              style: |
+                ha-card {
+                  margin: 16px;  # Adds external spacing
+                  padding: 16px;  # Adds internal spacing
+                  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.2), 0px 0px 20px 5px rgba(77, 163, 255, 0.6);  # Shadow for depth
+                  height: 400px;
+                  overflow-y: scroll;
+                  scrollbar-width: none;  /* Hides scrollbar for Firefox */
+                }
+                ha-card::-webkit-scrollbar {
+                  display: none;  /* Hides scrollbar for Chrome, Safari, and Opera */
+                }
+            layout_options:
+              grid_columns: 4
+              grid_rows: 6
+      - type: grid
+        cards:
+          - type: calendar
+            entities:
+              - calendar.tfam_calendar
+            card_mod:
+              style: |
+                ha-card {
+                  margin: 16px;  # Adds external spacing
+                  padding: 16px;  # Adds internal spacing
+                  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.2), 0px 0px 20px 5px rgba(77, 163, 255, 0.6);  # Shadow for depth
+                }
+          - type: custom:simple-sticky-note
+            entity: input_text.simple_sticky_note
+            card_mod:
+              style: |
+                ha-card {
+                  height: 400px;
+                  margin: 16px;  # Adds external spacing
+                  padding: 16px;  # Adds internal spacing
+                  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.2), 0px 0px 20px 5px rgba(77, 163, 255, 0.6);  # Shadow for depth
+                }
+

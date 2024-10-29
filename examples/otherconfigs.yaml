@@ -1,0 +1,43 @@
+  - platform: template
+    sensors:
+      time_of_day_greeting:
+        friendly_name: "Time of Day Greeting"
+        value_template: >-
+          {% set hour = now().hour %}
+          {% if hour < 12 %}
+            Good Morning
+          {% elif hour < 18 %}
+            Good Afternoon
+          {% else %}
+            Good Evening
+          {% endif %}
+
+
+# Feed Parser base sensor
+  - platform: feedparser
+    name: daily_quote_feed
+    feed_url: 'https://www.brainyquote.com/link/quotefu.rss'
+    scan_interval:
+      hours: 24
+
+template:
+  - sensor:
+      - name: "Daily Quote"
+        state: >
+          {% set feed = states('sensor.daily_quote_feed') %}
+          {% set entries = state_attr('sensor.daily_quote_feed', 'entries') %}
+          {% if entries and entries|length > 0 %}
+            {% set entry = entries|random %}
+            {{ entry.description if entry.description else "No quote available" }}
+          {% else %}
+            No quote available
+          {% endif %}
+        attributes:
+          author: >
+            {% set entries = state_attr('sensor.daily_quote_feed', 'entries') %}
+            {% if entries and entries|length > 0 %}
+              {{ entries[0].title }}
+            {% else %}
+              Unknown
+            {% endif %}
+

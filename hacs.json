@@ -1,0 +1,7 @@
+{
+  "name": "Enhanced Biofects Theme",
+  "domains": ["frontend"],
+  "homeassistant": "2023.0.0",
+  "description": "This custom Home Assistant theme combines a sleek, high-tech look with a practical layout, designed to make smart home interactions more enjoyable and immersive.",
+  "render_readme": true,
+}
