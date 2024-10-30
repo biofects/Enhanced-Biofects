@@ -6,10 +6,12 @@
   <img src="images/enhanced-biofects-custom.png" alt="Enhanced Biofects custom theme" width="400"/>
 </p>
 ---
+
 ## 💸 Donations Welcome!
 If you find this theme useful, please consider donating. Your support is greatly appreciated!
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TWRQVYJWC77E6)
+
 ---
 
 ## 🔍 About this Theme
