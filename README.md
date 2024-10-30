@@ -5,7 +5,11 @@
   <img src="images/enhanced-biofects-ui.png" alt="Enhanced Biofects UI Theme" width="400"/>
   <img src="images/enhanced-biofects-custom.png" alt="Enhanced Biofects custom theme" width="400"/>
 </p>
+---
+## 💸 Donations Welcome!
+If you find this theme useful, please consider donating. Your support is greatly appreciated!
 
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TWRQVYJWC77E6)
 ---
 
 ## 🔍 About this Theme
@@ -39,12 +43,6 @@ My Home Assistant runs in Docker on a server. I don't use the supervised version
     - 🌀 Fans
     - And much more to come!
 
----
-
-## 💸 Donations Welcome!
-If you find this theme useful, please consider donating. Your support is greatly appreciated!
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TWRQVYJWC77E6)
 
 ---
 
@@ -71,8 +69,6 @@ These are the essential plugins that helped me craft my use of the Enhanced Biof
 
 ### HACS (Recommended)
 
-#### Step-by-Step Guide
-
 1. Ensure [HACS](https://hacs.xyz/) is installed in your Home Assistant.
 2. Open the HACS panel, click the three dots in the top-right corner, and select **"Custom Repositories."**
 3. Add the following URL as a **Custom Repository**:  
@@ -81,8 +77,39 @@ These are the essential plugins that helped me craft my use of the Enhanced Biof
 4. Click **"Add,"** then navigate to the **"Theme"** tab, click **"+ Explore & Download Repositories"** and search for "Biofects."
 5. Install the theme and restart Home Assistant.
 6. Go to **User Profile** in Home Assistant and select the Enhanced Biofects theme.
+7. Set up background image: (Need to figure out how to have hacs place the image in the correct folder)
+   ```
+   # Create backgrounds directory if it doesn't exist
+   mkdir -p /config/www/backgrounds
+   ```
+   ```
+   # Copy background image
+   copy enhanced-biofects.png /config/www/backgrounds/enhanced-biofects.png
+8. Restart Home Assistant
 
 ---
+## Manual installation
+1. Create Theme Folder 
+    ```
+    # Create Enhanced Biofects Theme Folder
+    mkdir -p /config/themes/Enhanced-Biofects
+    ```
+2. Copy the file `Enhanced-Biofects.yaml` into your Home Assistant themes folder
+    ```
+    # Copy the file `Enhanced-Biofects.yaml` into your Home Assistant themes folder
+    cp Enhanced-Biofects.yaml /config/themes/Enhanced-Biofects
+    ```
+3. Set up background image: (Need to figure out how to have hacs place the image in the correct folder)
+   ```
+   # Create backgrounds directory if it doesn't exist
+   mkdir -p /config/www/backgrounds
+   ```
+   ```
+   # Copy background image
+   copy enhanced-biofects.png /config/www/backgrounds/enhanced-biofects.png
+4. Restart Home Assistant
+
+
 
 ## 🛠 How I Created My Layouts
 
@@ -105,4 +132,3 @@ If you encounter bugs or have feature requests, feel free to [open an issue](htt
 
 ## 📜 License
 This project is licensed under the MIT License.
-
