@@ -1,3 +1,4 @@
+[![Sponsor Me](https://img.shields.io/badge/Sponsor%20Me-%F0%9F%92%AA-purple?style=for-the-badge)](https://github.com/sponsors/biofects?frequency=recurring&sponsor=biofects)
 # 🚀 Enhanced Biofects Theme
 **Enhanced Biofects Theme** is a Home Assistant theme showcases a sleek, futuristic design with a neon blue color scheme and glowing accents. The theme features a dark background with subtle circuit patterns, giving the dashboard a high-tech, sci-fi look. Cards appear to float with illuminated borders, enhancing readability and adding depth. Elements such as the sidebar, clock, and interactive panels have consistent color highlights, creating a cohesive, immersive experience. The dashboard layout efficiently organizes information, including a personalized greeting, daily quotes, weather data, and a to-do list, all accessible at a glance in a visually striking interface. **[WIP]**
 
@@ -12,6 +13,9 @@ If you find this theme useful, please consider donating. Your support is greatly
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TWRQVYJWC77E6)
 
+or
+
+[![Sponsor Me](https://img.shields.io/badge/Sponsor%20Me-%F0%9F%92%AA-purple?style=for-the-badge)](https://github.com/sponsors/biofects?frequency=recurring&sponsor=biofects)
 ---
 
 ## 🔍 About this Theme
