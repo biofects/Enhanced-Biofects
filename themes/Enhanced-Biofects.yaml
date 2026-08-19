@@ -161,9 +161,16 @@ Enhanced-Biofects:
   # triggers Chrome's rubber-band bounce, which moves the sidebar's copy (it's
   # part of the sidebar's own box) while the fixed layer behind it doesn't,
   # briefly showing both as they fall out of alignment.
+  # Content areas darken the raw image via ha-card's own translucent fill
+  # (rgba(0, 15, 30, 0.7)) sitting on top of it. The sidebar has no such
+  # layer, so bright parts of the image (e.g. horizontal highlight bands)
+  # can clash with the sidebar's own cyan text where they cross. Stack the
+  # same translucent color over the image here too, for consistency.
   card-mod-sidebar: |
     :host {
-      background: var(--lovelace-background);
+      background:
+        linear-gradient(rgba(0, 15, 30, 0.7), rgba(0, 15, 30, 0.7)),
+        var(--lovelace-background);
     }
   card-mod-top-app-bar-fixed: |
     :host {
