@@ -16,7 +16,13 @@ Enhanced-Biofects:
   card-background-color: "rgba(0, 15, 30, 0.7)"
   primary-color: "#00FFFF"  # Bright Turquoise
   light-primary-color: "#80FFFF"  # Very Light Turquoise
-  primary-background-color: "#001F1F"
+  # Translucent (was solid #001F1F) so the background image shows through
+  # hass-tabs-subpage and hass-subpage - the shared layout for nearly every
+  # Settings sub-page and Profile, which paint :host{background-color:
+  # var(--primary-background-color)} directly and aren't reachable by any
+  # card-mod hook. Ingress/iframe panels stay unaffected in practice: their
+  # embedded page's own opaque content fully covers this the instant it loads.
+  primary-background-color: "rgba(0, 31, 31, 0.7)"
   secondary-background-color: "#000000"
   rgb-secondary-background-color: 0, 0, 0
   divider-color: "#005F5F"
@@ -129,6 +135,60 @@ Enhanced-Biofects:
   md-sys-color-on-background: var(--primary-text-color)
 
   ### Custom CSS for specific element styling ###
+  # Background image behind non-Lovelace panels (Settings, Profile, Developer
+  # Tools, ...). card-mod-root only reaches hui-root (the Lovelace chrome), so
+  # it can't be used for this. card-mod-sidebar is the working hook for the
+  # sidebar; the rest paint the image at each panel's own root, paired with
+  # the primary-background-color change above (which covers hass-tabs-subpage
+  # - the layout most Settings sub-pages and Profile use, and which card-mod
+  # has no hook for at all).
+  #
+  # Known limitations:
+  # - Profile and custom panels (e.g. HACS) aren't covered - card-mod has no
+  #   hook reaching ha-panel-profile or third-party panels at all, confirmed
+  #   against its full patch list.
+  # - Ingress panels (iframe-embedded UIs) are NOT covered - card-mod's
+  #   panel-custom hook explicitly doesn't support iframes, and CSS can't cross
+  #   an iframe boundary at all regardless. In practice this doesn't matter:
+  #   the embedded page's own opaque content fully covers ha-panel-iframe's
+  #   fallback background the instant it loads.
+  # Side effect on Lovelace dashboards: since the sidebar now paints its own
+  # copy of the background image (needed to make it visible on Settings/admin
+  # panels), dashboards end up with two overlapping copies of the same image -
+  # one on the sidebar, one on Lovelace's own true viewport-fixed background
+  # behind it. Normally indistinguishable (identical, aligned), but they
+  # animate independently: overscrolling past the top/bottom of a dashboard
+  # triggers Chrome's rubber-band bounce, which moves the sidebar's copy (it's
+  # part of the sidebar's own box) while the fixed layer behind it doesn't,
+  # briefly showing both as they fall out of alignment.
+  card-mod-sidebar: |
+    :host {
+      background: var(--lovelace-background);
+    }
+  card-mod-top-app-bar-fixed: |
+    :host {
+      background: var(--lovelace-background);
+    }
+  # ha-panel-config and ha-panel-developer-tools (both HassRouterPage-based)
+  # render in light DOM - no shadow root at all - confirmed live: no
+  # <template shadowrootmode> in the DOM. :host matches nothing there; it
+  # must be a plain tag selector instead. Also needs explicit sizing: neither
+  # has any static styles of its own (confirmed live - background-image
+  # computes correctly but nothing painted), so as a bare custom element it
+  # has no box to paint a background into without one.
+  card-mod-config: |
+    ha-panel-config {
+      display: block;
+      height: 100%;
+      background: var(--lovelace-background);
+    }
+  card-mod-developer-tools: |
+    ha-panel-developer-tools {
+      display: block;
+      height: 100%;
+      background: var(--lovelace-background);
+    }
+
   card-mod-root: |
     /* Make sidebar transparent */
     ha-sidebar {
