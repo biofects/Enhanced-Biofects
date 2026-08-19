@@ -10,6 +10,7 @@ Enhanced-Biofects:
   header-height: 40px
 
   ### Main Interface Colors ###
+  color-scheme: "dark"
   lovelace-background: 'center / cover no-repeat url("/local/backgrounds/enhanced-biofects.png") fixed'
   app-header-background-color: "rgba(0, 15, 30, 0.7)"
   card-background-color: "rgba(0, 15, 30, 0.7)"
@@ -82,6 +83,50 @@ Enhanced-Biofects:
   input-ink-color: var(--primary-color)
   input-disabled-fill-color: "rgba(0, 0, 0, 0.33)"
   input-disabled-ink-color: var(--disabled-primary-color)
+
+  ### Select / Dropdown Fields (profile page, more-info dialogs, etc.) ###
+  # These live in nested shadow DOM that card-mod-root's CSS below can't reach,
+  # so they need real theme tokens or they fall back to Material's white fill.
+  # HA 2026.x rewrote ha-select on top of ha-picker-field / ha-combo-box-item,
+  # which reads its background/border from these --ha-color-* tokens, not the
+  # older mdc-select/md-sys-color-* tokens below.
+  ha-color-form-background: "rgba(0, 15, 30, 0.9)"
+  ha-color-form-background-hover: "rgba(0, 31, 31, 0.9)"
+  ha-color-form-background-disabled: "rgba(0, 0, 0, 0.33)"
+  ha-color-border-neutral-quiet: "rgba(0, 255, 255, 0.15)"
+  ha-color-border-neutral-normal: "rgba(0, 255, 255, 0.3)"
+  ha-color-border-neutral-loud: "rgba(0, 255, 255, 0.5)"
+  ha-color-text-primary: var(--primary-text-color)
+  ha-color-text-secondary: var(--secondary-text-color)
+  popup-background-color: "rgba(0, 15, 30, 0.95)"
+  outline-color: var(--divider-color)
+  mdc-select-fill-color: "rgba(0, 15, 30, 0.9)"
+  mdc-select-ink-color: "#FFFFFF"
+  mdc-select-label-ink-color: var(--light-primary-color)
+  mdc-select-idle-line-color: var(--divider-color)
+  mdc-select-disabled-ink-color: var(--disabled-text-color)
+  mdc-menu-surface-fill-color: var(--popup-background-color)
+  mdc-list-item-text-color: "#FFFFFF"
+  mwc-list-item-text-color: "#FFFFFF"
+  mdc-text-field-fill-color: var(--input-fill-color)
+  mdc-text-field-ink-color: var(--input-ink-color)
+  mdc-text-field-label-ink-color: var(--input-label-ink-color)
+  mdc-text-field-idle-line-color: var(--divider-color)
+  mdc-text-field-disabled-fill-color: var(--input-disabled-fill-color)
+  mdc-text-field-disabled-ink-color: var(--disabled-text-color)
+  md-sys-color-surface: var(--popup-background-color)
+  md-sys-color-surface-container: var(--popup-background-color)
+  md-sys-color-surface-container-low: var(--primary-background-color)
+  md-sys-color-surface-container-high: var(--secondary-background-color)
+  md-sys-color-surface-container-highest: var(--card-background-color)
+  md-sys-color-surface-variant: var(--card-background-color)
+  md-sys-color-on-surface: var(--primary-text-color)
+  md-sys-color-on-surface-variant: var(--secondary-text-color)
+  md-sys-color-primary: var(--primary-color)
+  md-sys-color-outline: var(--outline-color)
+  md-sys-color-outline-variant: var(--divider-color)
+  md-sys-color-background: var(--primary-background-color)
+  md-sys-color-on-background: var(--primary-text-color)
 
   ### Custom CSS for specific element styling ###
   card-mod-root: |
