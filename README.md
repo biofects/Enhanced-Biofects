@@ -1,4 +1,5 @@
 [![Sponsor Me](https://img.shields.io/badge/Sponsor%20Me-%F0%9F%92%AA-purple?style=for-the-badge)](https://github.com/sponsors/biofects?frequency=recurring&sponsor=biofects)
+[![Release](https://img.shields.io/github/v/release/biofects/Enhanced-Biofects?display_name=tag)](https://github.com/biofects/Enhanced-Biofects/releases/latest)
 # 🚀 Enhanced Biofects Theme
 **Enhanced Biofects Theme** is a Home Assistant theme showcases a sleek, futuristic design with a neon blue color scheme and glowing accents. The theme features a dark background with subtle circuit patterns, giving the dashboard a high-tech, sci-fi look. Cards appear to float with illuminated borders, enhancing readability and adding depth. Elements such as the sidebar, clock, and interactive panels have consistent color highlights, creating a cohesive, immersive experience. The dashboard layout efficiently organizes information, including a personalized greeting, daily quotes, weather data, and a to-do list, all accessible at a glance in a visually striking interface. **[WIP]**
 
@@ -26,8 +27,21 @@ or
 - Enhanced Readability: Neon-glowing borders around cards and text improve readability, especially in low-light conditions.
 - Optimized Layout: Key elements such as weather, to-do lists, calendar events, and daily quotes are prominently displayed for easy access.
 - Personalized Design: Adds a "wow" factor to your dashboard, turning it into a unique expression of style.
+- Dark Tables: Native and custom-card tables use dark alternating rows with readable white cell text.
+- Visible Integration Errors: Broken integrations use a thicker red border, tinted surface, and warning glow.
 - Why Use This Theme?
 -- This theme is ideal for anyone looking to elevate their Home Assistant dashboard with an immersive, sci-fi inspired interface that enhances both aesthetics and usability. Perfect for those who want a personalized, visually appealing, and organized smart home experience.
+
+## Latest Release
+
+### V1.1.2
+
+- Added dark backgrounds for table headers, rows, and cells.
+- Added alternating table row colors and white table-cell text.
+- Made broken integrations more visible with a 3px red border, red surface tint, and glow.
+- Resolves [issue #6](https://github.com/biofects/Enhanced-Biofects/issues/6).
+
+See [CHANGELOG.md](CHANGELOG.md) for the release history.
 
 ## Notes
 My Home Assistant runs in Docker on a server. I don't use the supervised version, nor do I send any data to Home Assistant servers. This is my personal choice, despite it requiring more manual management.
@@ -61,6 +75,31 @@ These are the essential plugins that helped me craft my use of the Enhanced Biof
 - [Kiosk Mode](https://github.com/maykar/kiosk-mode) – Hides UI elements for a streamlined experience.
 - [Card Mod](https://github.com/thomasloven/lovelace-card-mod) – Add custom styling to cards.
 - [layout-card](https://github.com/thomasloven/hass-config/wiki/Lovelace-Plugins) - For my custom layouts
+
+### Card Mod setup for Settings backgrounds
+
+The background image on Settings, Developer Tools, and other non-dashboard
+pages requires Card Mod to load as a frontend module. A Lovelace resource alone
+only loads Card Mod on dashboards.
+
+1. In Home Assistant, open **Settings > Dashboards**, select the three-dot menu,
+   and open **Resources**.
+2. Find the Card Mod resource and note its exact URL, including any query string
+   such as a `hacstag` value when present.
+3. Add that same URL under `frontend.extra_module_url` in
+   `configuration.yaml`:
+
+   ```yaml
+   frontend:
+     extra_module_url:
+       - /local/community/lovelace-card-mod/card-mod.js
+   ```
+
+4. Restart Home Assistant, then clear the frontend cache or perform a hard
+   refresh.
+
+Keep the HACS-managed dashboard resource in place. When Card Mod updates, update
+the `extra_module_url` to match the new resource URL.
 
 ## 🔧 Optional plugins I validated that work
 - [Restriction Card](https://github.com/iantrich/restriction-card) – Lock access to things like thermostats. 🔒

@@ -5,9 +5,10 @@ We release updates regularly to improve the functionality and security of the En
 
 | Version | Supported          |
 | ------- | ------------------ |
-| Latest   | :white_check_mark: |
-| 1.0.1   | :x:                |
-| 1.0.0   | :x:                |
+| 1.1.2   | :white_check_mark: |
+| 1.1.1   | :x:                |
+| 1.1.0   | :x:                |
+| <= 1.0  | :x:                |
 
 ### Reporting a Vulnerability
 If you discover a security vulnerability in the Enhanced Biofects theme, please report it responsibly. We request that you refrain from publicly disclosing details until we have had a chance to address it.

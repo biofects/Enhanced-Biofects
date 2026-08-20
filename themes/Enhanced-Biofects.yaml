@@ -81,9 +81,10 @@ Enhanced-Biofects:
   paper-toggle-button-unchecked-bar-color: "#005F5F"
 
   ### Table Rows ###
-  table-row-background-color: var(--primary-background-color)
-  table-row-alternative-background-color: var(--primary-background-color)
-  data-table-background-color: var(--primary-background-color)
+  table-header-background-color: "rgba(0, 31, 31, 0.98)"
+  table-row-background-color: "rgba(0, 15, 30, 0.92)"
+  table-row-alternative-background-color: "rgba(0, 31, 31, 0.92)"
+  data-table-background-color: "rgba(0, 15, 30, 0.96)"
 
   ### Switches ###
   switch-unchecked-button-color: var(--divider-color)
@@ -189,12 +190,28 @@ Enhanced-Biofects:
   # has any static styles of its own (confirmed live - background-image
   # computes correctly but nothing painted), so as a bare custom element it
   # has no box to paint a background into without one.
-  card-mod-config: |
-    ha-panel-config {
-      display: block;
-      height: 100%;
-      background: var(--lovelace-background);
-    }
+  # Make integrations in an error state unmistakable without changing healthy
+  # cards. Each selector step ends at a shadow root so card-mod can retry as
+  # Home Assistant loads the routed dashboard and integration cards.
+  card-mod-config-yaml: |
+    ".": |
+      ha-panel-config {
+        display: block;
+        height: 100%;
+        background: var(--lovelace-background);
+      }
+    "ha-config-integrations-dashboard $":
+      "ha-integration-card $": |
+        ha-card.state-error {
+          --ha-card-border-width: 3px;
+          --ha-card-background: linear-gradient(
+            rgba(255, 65, 54, 0.16),
+            rgba(0, 15, 30, 0.88)
+          );
+          box-shadow:
+            0 0 8px rgba(255, 65, 54, 0.9),
+            0 0 20px rgba(255, 65, 54, 0.45);
+        }
   card-mod-developer-tools: |
     ha-panel-developer-tools {
       display: block;
@@ -235,6 +252,31 @@ Enhanced-Biofects:
     /* Enhance LED effect for icons */
     ha-icon {
       filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7));
+    }
+
+    /* Keep native and custom-card tables on the dark theme surfaces */
+    table,
+    thead,
+    tbody,
+    tfoot {
+      background-color: var(--data-table-background-color) !important;
+    }
+    thead tr,
+    th {
+      background-color: var(--table-header-background-color) !important;
+    }
+    tbody tr:nth-child(odd),
+    tbody tr:nth-child(odd) td {
+      background-color: var(--table-row-background-color) !important;
+    }
+    tbody tr:nth-child(even),
+    tbody tr:nth-child(even) td {
+      background-color: var(--table-row-alternative-background-color) !important;
+    }
+    th,
+    td {
+      color: #FFFFFF !important;
+      border-color: var(--divider-color) !important;
     }
 
     /* Style form fields */
