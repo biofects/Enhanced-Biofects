@@ -1,4 +1,5 @@
 [![Sponsor Me](https://img.shields.io/badge/Sponsor%20Me-%F0%9F%92%AA-purple?style=for-the-badge)](https://github.com/sponsors/biofects?frequency=recurring&sponsor=biofects)
+[![Release](https://img.shields.io/github/v/release/biofects/Enhanced-Biofects?display_name=tag)](https://github.com/biofects/Enhanced-Biofects/releases/latest)
 # 🚀 Enhanced Biofects Theme
 **Enhanced Biofects Theme** is a Home Assistant theme showcases a sleek, futuristic design with a neon blue color scheme and glowing accents. The theme features a dark background with subtle circuit patterns, giving the dashboard a high-tech, sci-fi look. Cards appear to float with illuminated borders, enhancing readability and adding depth. Elements such as the sidebar, clock, and interactive panels have consistent color highlights, creating a cohesive, immersive experience. The dashboard layout efficiently organizes information, including a personalized greeting, daily quotes, weather data, and a to-do list, all accessible at a glance in a visually striking interface. **[WIP]**
 
@@ -26,8 +27,21 @@ or
 - Enhanced Readability: Neon-glowing borders around cards and text improve readability, especially in low-light conditions.
 - Optimized Layout: Key elements such as weather, to-do lists, calendar events, and daily quotes are prominently displayed for easy access.
 - Personalized Design: Adds a "wow" factor to your dashboard, turning it into a unique expression of style.
+- Dark Tables: Native and custom-card tables use dark alternating rows with readable white cell text.
+- Visible Integration Errors: Broken integrations use a thicker red border, tinted surface, and warning glow.
 - Why Use This Theme?
 -- This theme is ideal for anyone looking to elevate their Home Assistant dashboard with an immersive, sci-fi inspired interface that enhances both aesthetics and usability. Perfect for those who want a personalized, visually appealing, and organized smart home experience.
+
+## Latest Release
+
+### V1.1.2
+
+- Added dark backgrounds for table headers, rows, and cells.
+- Added alternating table row colors and white table-cell text.
+- Made broken integrations more visible with a 3px red border, red surface tint, and glow.
+- Resolves [issue #6](https://github.com/biofects/Enhanced-Biofects/issues/6).
+
+See [CHANGELOG.md](CHANGELOG.md) for the release history.
 
 ## Notes
 My Home Assistant runs in Docker on a server. I don't use the supervised version, nor do I send any data to Home Assistant servers. This is my personal choice, despite it requiring more manual management.
