@@ -16,6 +16,10 @@ All notable changes to Enhanced Biofects are documented here.
 - Prevented native and custom-card table elements from falling back to white
   backgrounds.
 - Made integration setup failures easier to identify, resolving issue #6.
+- Documented the Card Mod frontend-module setup required for background images
+  on Settings and other non-dashboard pages.
+- Corrected the Home Assistant 2026.8 shadow-root path used to style broken
+  integration cards.
 
 ## V1.1.1 - 2026-08-19
 

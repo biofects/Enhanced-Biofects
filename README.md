@@ -76,6 +76,31 @@ These are the essential plugins that helped me craft my use of the Enhanced Biof
 - [Card Mod](https://github.com/thomasloven/lovelace-card-mod) – Add custom styling to cards.
 - [layout-card](https://github.com/thomasloven/hass-config/wiki/Lovelace-Plugins) - For my custom layouts
 
+### Card Mod setup for Settings backgrounds
+
+The background image on Settings, Developer Tools, and other non-dashboard
+pages requires Card Mod to load as a frontend module. A Lovelace resource alone
+only loads Card Mod on dashboards.
+
+1. In Home Assistant, open **Settings > Dashboards**, select the three-dot menu,
+   and open **Resources**.
+2. Find the Card Mod resource and note its exact URL, including any query string
+   such as a `hacstag` value when present.
+3. Add that same URL under `frontend.extra_module_url` in
+   `configuration.yaml`:
+
+   ```yaml
+   frontend:
+     extra_module_url:
+       - /local/community/lovelace-card-mod/card-mod.js
+   ```
+
+4. Restart Home Assistant, then clear the frontend cache or perform a hard
+   refresh.
+
+Keep the HACS-managed dashboard resource in place. When Card Mod updates, update
+the `extra_module_url` to match the new resource URL.
+
 ## 🔧 Optional plugins I validated that work
 - [Restriction Card](https://github.com/iantrich/restriction-card) – Lock access to things like thermostats. 🔒
 - [Unifi Gateway](https://github.com/custom-components/sensor.unifigateway)
