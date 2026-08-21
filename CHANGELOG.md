@@ -16,6 +16,8 @@ All notable changes to Enhanced Biofects are documented here.
   Home Assistant's modern Web Awesome controls.
 - Replaced near-black bright-button content with deep teal and changed white
   unchecked switch rails to dark teal with a cyan thumb.
+- Restored bright cyan text and actions on dark notification toasts, including
+  the connection-lost message.
 
 ## V1.1.2 - 2026-08-20
 

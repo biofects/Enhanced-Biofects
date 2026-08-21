@@ -136,7 +136,7 @@ Enhanced-Biofects:
   ha-color-fill-neutral-normal-active: "rgba(0, 31, 31, 0.98)"
   ha-color-on-neutral-quiet: var(--secondary-text-color)
   ha-color-on-neutral-normal: var(--primary-text-color)
-  ha-color-on-neutral-loud: var(--text-primary-color)
+  ha-color-on-neutral-loud: var(--primary-text-color)
   ha-color-border-neutral-quiet: "rgba(0, 255, 255, 0.15)"
   ha-color-border-neutral-normal: "rgba(0, 255, 255, 0.3)"
   ha-color-border-neutral-loud: "rgba(0, 255, 255, 0.5)"
