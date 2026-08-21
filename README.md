@@ -41,6 +41,7 @@ or
    the HACS Download button.
 - Made the current date and calendar view switcher readable on turquoise.
 - Matched integration filters and checkbox dropdowns to the theme.
+- Refined bright-button content and unchecked switches with visible teal tones.
 - Resolves [issue #8](https://github.com/biofects/Enhanced-Biofects/issues/8)
    and [issue #10](https://github.com/biofects/Enhanced-Biofects/issues/10).
 

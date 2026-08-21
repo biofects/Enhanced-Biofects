@@ -24,6 +24,7 @@ Enhanced-Biofects:
   light-primary-color: "#80FFFF"  # Very Light Turquoise
   mdc-theme-on-primary: var(--text-primary-color)
   mdc-theme-on-secondary: var(--text-primary-color)
+  mdc-ripple-color: "#008080"
   # Translucent (was solid #001F1F) so the background image shows through
   # hass-tabs-subpage and hass-subpage - the shared layout for nearly every
   # Settings sub-page and Profile, which paint :host{background-color:
@@ -39,7 +40,7 @@ Enhanced-Biofects:
   ### Text Colors ###
   primary-text-color: "#00FFFF"  # Bright Turquoise
   secondary-text-color: "#80FFFF"  # Very Light Turquoise
-  text-primary-color: "#001F1F"
+  text-primary-color: "#004F4F"
   disabled-text-color: "#008080"
 
   ### Sidebar Menu ###
@@ -91,6 +92,13 @@ Enhanced-Biofects:
   ### Switches ###
   switch-unchecked-button-color: var(--divider-color)
   switch-unchecked-track-color: var(--divider-color)
+  ha-switch-background-color: "rgba(0, 31, 31, 0.95)"
+  ha-switch-background-color-hover: "rgba(0, 95, 95, 0.9)"
+  ha-switch-border-color: "#005F5F"
+  ha-switch-thumb-background-color: "#00B8B8"
+  ha-switch-thumb-background-color-hover: var(--primary-color)
+  ha-switch-thumb-border-color: "#00B8B8"
+  ha-switch-thumb-border-color-hover: var(--primary-color)
 
   ### Inputs ###
   input-fill-color: "rgba(0, 255, 255, 0.05)"
