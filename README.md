@@ -37,7 +37,11 @@ or
 ### V1.1.3
 
 - Kept Settings > Apps cards on a subtle dark tint when hovered.
-- Resolves [issue #8](https://github.com/biofects/Enhanced-Biofects/issues/8).
+- Restored contrasting dark teal content on bright Material buttons, including
+   the HACS Download button.
+- Made the current date readable on its turquoise calendar indicator.
+- Resolves [issue #8](https://github.com/biofects/Enhanced-Biofects/issues/8)
+   and [issue #10](https://github.com/biofects/Enhanced-Biofects/issues/10).
 
 See [CHANGELOG.md](CHANGELOG.md) for the release history.
 

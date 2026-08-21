@@ -22,6 +22,8 @@ Enhanced-Biofects:
   card-background-color: "rgba(0, 15, 30, 0.7)"
   primary-color: "#00FFFF"  # Bright Turquoise
   light-primary-color: "#80FFFF"  # Very Light Turquoise
+  mdc-theme-on-primary: var(--text-primary-color)
+  mdc-theme-on-secondary: var(--text-primary-color)
   # Translucent (was solid #001F1F) so the background image shows through
   # hass-tabs-subpage and hass-subpage - the shared layout for nearly every
   # Settings sub-page and Profile, which paint :host{background-color:
@@ -37,7 +39,7 @@ Enhanced-Biofects:
   ### Text Colors ###
   primary-text-color: "#00FFFF"  # Bright Turquoise
   secondary-text-color: "#80FFFF"  # Very Light Turquoise
-  text-primary-color: var(--primary-text-color)
+  text-primary-color: "#001F1F"
   disabled-text-color: "#008080"
 
   ### Sidebar Menu ###
@@ -312,17 +314,17 @@ Enhanced-Biofects:
       background-color: #00FFFF !important;
     }
     .mdc-fab.mdc-fab--extended .mdc-fab__label {
-      color: #000000 !important;
+      color: var(--text-primary-color) !important;
       font-weight: bold;
     }
     .mdc-fab.mdc-fab--extended:hover {
       background-color: #80FFFF !important;
     }
     .mdc-fab.mdc-fab--extended:hover .mdc-fab__label {
-      color: #000000 !important;
+      color: var(--text-primary-color) !important;
     }
 
-    /* Make button text black */
+    /* Keep button content readable on bright primary surfaces */
     button, 
     .mdc-button,
     .mdc-button .mdc-button__label,
@@ -332,12 +334,12 @@ Enhanced-Biofects:
     :host .mdc-fab:not(:disabled) .mdc-fab__icon,
     :host .mdc-fab:not(:disabled) .mdc-fab__label,
     .mdc-fab__label {
-      color: #000000 !important;
+      color: var(--text-primary-color) !important;
     }
 
-    /* Style today's date in calendar */
+    /* Keep today's date readable on its primary-color circle */
     td.fc-day-today .fc-daygrid-day-number {
-      color: #000000 !important;
+      color: var(--text-primary-color) !important;
       font-weight: bold;
     }
 
@@ -346,9 +348,9 @@ Enhanced-Biofects:
       background-color: #CCCCCC !important;
     }
 
-    /* Maintain black text on hover for fab buttons */
+    /* Maintain contrasting text on hover for fab buttons */
     .mdc-fab:hover .mdc-fab__label {
-      color: #000000 !important;
+      color: var(--text-primary-color) !important;
     }
  
     /* Style placeholder text */

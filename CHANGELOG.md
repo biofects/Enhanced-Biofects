@@ -8,6 +8,9 @@ All notable changes to Enhanced Biofects are documented here.
 
 - Kept Settings > Apps cards on a subtle dark tint when hovered, resolving
   issue #8.
+- Restored contrasting dark teal text and icons on bright primary and secondary
+  Material buttons, resolving issue #10.
+- Made the current date readable on its turquoise calendar indicator.
 
 ## V1.1.2 - 2026-08-20
 
