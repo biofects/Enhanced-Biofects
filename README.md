@@ -34,12 +34,17 @@ or
 
 ## Latest Release
 
-### V1.1.2
+### V1.1.3
 
-- Added dark backgrounds for table headers, rows, and cells.
-- Added alternating table row colors and white table-cell text.
-- Made broken integrations more visible with a 3px red border, red surface tint, and glow.
-- Resolves [issue #6](https://github.com/biofects/Enhanced-Biofects/issues/6).
+- Kept Settings > Apps cards on a subtle dark tint when hovered.
+- Restored contrasting dark teal content on bright Material buttons, including
+   the HACS Download button.
+- Made the current date and calendar view switcher readable on turquoise.
+- Matched integration filters and checkbox dropdowns to the theme.
+- Refined bright-button content and unchecked switches with visible teal tones.
+- Restored readable cyan text on dark notification toasts.
+- Resolves [issue #8](https://github.com/biofects/Enhanced-Biofects/issues/8)
+   and [issue #10](https://github.com/biofects/Enhanced-Biofects/issues/10).
 
 See [CHANGELOG.md](CHANGELOG.md) for the release history.
 
@@ -172,6 +177,12 @@ To get the layout I wanted with the Enhanced Biofects Theme, I combined various 
 
 ## 🐛 Support & Issues
 If you encounter bugs or have feature requests, feel free to [open an issue](https://github.com/biofects/Enhanced-Biofects/issues) on the GitHub repository.
+
+---
+
+## Thanks
+Special thanks to [pallemannen](https://github.com/pallemannen) for the helpful
+feedback and support in improving the theme.
 
 ---
 

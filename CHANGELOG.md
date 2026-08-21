@@ -2,6 +2,23 @@
 
 All notable changes to Enhanced Biofects are documented here.
 
+## V1.1.3 - 2026-08-21
+
+### Fixed
+
+- Kept Settings > Apps cards on a subtle dark tint when hovered, resolving
+  issue #8.
+- Restored contrasting dark teal text and icons on bright primary and secondary
+  Material buttons, resolving issue #10.
+- Made the current date readable on its turquoise calendar indicator and
+  themed the calendar view switcher states.
+- Themed integration filters, filter menus, and checkbox dropdown states for
+  Home Assistant's modern Web Awesome controls.
+- Replaced near-black bright-button content with deep teal and changed white
+  unchecked switch rails to dark teal with a cyan thumb.
+- Restored bright cyan text and actions on dark notification toasts, including
+  the connection-lost message.
+
 ## V1.1.2 - 2026-08-20
 
 ### Added
