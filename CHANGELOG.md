@@ -10,7 +10,8 @@ All notable changes to Enhanced Biofects are documented here.
   issue #8.
 - Restored contrasting dark teal text and icons on bright primary and secondary
   Material buttons, resolving issue #10.
-- Made the current date readable on its turquoise calendar indicator.
+- Made the current date readable on its turquoise calendar indicator and
+  themed the calendar view switcher states.
 - Themed integration filters, filter menus, and checkbox dropdown states for
   Home Assistant's modern Web Awesome controls.
 

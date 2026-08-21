@@ -39,7 +39,7 @@ or
 - Kept Settings > Apps cards on a subtle dark tint when hovered.
 - Restored contrasting dark teal content on bright Material buttons, including
    the HACS Download button.
-- Made the current date readable on its turquoise calendar indicator.
+- Made the current date and calendar view switcher readable on turquoise.
 - Matched integration filters and checkbox dropdowns to the theme.
 - Resolves [issue #8](https://github.com/biofects/Enhanced-Biofects/issues/8)
    and [issue #10](https://github.com/biofects/Enhanced-Biofects/issues/10).

@@ -114,6 +114,9 @@ Enhanced-Biofects:
   ha-color-fill-primary-normal-resting: "rgba(0, 95, 95, 0.9)"
   ha-color-fill-primary-normal-hover: "rgba(0, 128, 128, 0.9)"
   ha-color-fill-primary-normal-active: "rgba(0, 95, 95, 0.98)"
+  ha-color-fill-primary-loud-resting: var(--primary-color)
+  ha-color-fill-primary-loud-hover: var(--light-primary-color)
+  ha-color-fill-primary-loud-active: "#00CCCC"
   ha-color-on-primary-quiet: var(--light-primary-color)
   ha-color-on-primary-normal: var(--primary-color)
   ha-color-on-primary-loud: var(--text-primary-color)
