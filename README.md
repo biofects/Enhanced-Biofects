@@ -40,6 +40,7 @@ or
 - Restored contrasting dark teal content on bright Material buttons, including
    the HACS Download button.
 - Made the current date readable on its turquoise calendar indicator.
+- Matched integration filters and checkbox dropdowns to the theme.
 - Resolves [issue #8](https://github.com/biofects/Enhanced-Biofects/issues/8)
    and [issue #10](https://github.com/biofects/Enhanced-Biofects/issues/10).
 
