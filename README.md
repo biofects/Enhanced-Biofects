@@ -34,12 +34,10 @@ or
 
 ## Latest Release
 
-### V1.1.2
+### V1.1.3
 
-- Added dark backgrounds for table headers, rows, and cells.
-- Added alternating table row colors and white table-cell text.
-- Made broken integrations more visible with a 3px red border, red surface tint, and glow.
-- Resolves [issue #6](https://github.com/biofects/Enhanced-Biofects/issues/6).
+- Kept Settings > Apps cards on a subtle dark tint when hovered.
+- Resolves [issue #8](https://github.com/biofects/Enhanced-Biofects/issues/8).
 
 See [CHANGELOG.md](CHANGELOG.md) for the release history.
 

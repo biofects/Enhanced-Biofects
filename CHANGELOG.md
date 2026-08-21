@@ -2,6 +2,13 @@
 
 All notable changes to Enhanced Biofects are documented here.
 
+## V1.1.3 - 2026-08-21
+
+### Fixed
+
+- Kept Settings > Apps cards on a subtle dark tint when hovered, resolving
+  issue #8.
+
 ## V1.1.2 - 2026-08-20
 
 ### Added

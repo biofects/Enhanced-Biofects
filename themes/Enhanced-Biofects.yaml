@@ -106,6 +106,7 @@ Enhanced-Biofects:
   ha-color-form-background: "rgba(0, 15, 30, 0.9)"
   ha-color-form-background-hover: "rgba(0, 31, 31, 0.9)"
   ha-color-form-background-disabled: "rgba(0, 0, 0, 0.33)"
+  ha-color-fill-neutral-quiet-resting: "rgba(0, 31, 31, 0.9)"
   ha-color-border-neutral-quiet: "rgba(0, 255, 255, 0.15)"
   ha-color-border-neutral-normal: "rgba(0, 255, 255, 0.3)"
   ha-color-border-neutral-loud: "rgba(0, 255, 255, 0.5)"
