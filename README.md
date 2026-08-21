@@ -180,5 +180,11 @@ If you encounter bugs or have feature requests, feel free to [open an issue](htt
 
 ---
 
+## Thanks
+Special thanks to [pallemannen](https://github.com/pallemannen) for the helpful
+feedback and support in improving the theme.
+
+---
+
 ## 📜 License
 This project is licensed under the MIT License.
