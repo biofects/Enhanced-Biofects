@@ -2,6 +2,14 @@
 
 All notable changes to Enhanced Biofects are documented here.
 
+## V1.1.4 - 2026-08-23
+
+### Fixed
+
+- Kept dropdown menus aligned with their fields inside dialogs by removing the
+  surface backdrop filter that changed fixed-position coordinate handling,
+  resolving issue #11.
+
 ## V1.1.3 - 2026-08-21
 
 ### Fixed

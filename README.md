@@ -34,17 +34,11 @@ or
 
 ## Latest Release
 
-### V1.1.3
+### V1.1.4
 
-- Kept Settings > Apps cards on a subtle dark tint when hovered.
-- Restored contrasting dark teal content on bright Material buttons, including
-   the HACS Download button.
-- Made the current date and calendar view switcher readable on turquoise.
-- Matched integration filters and checkbox dropdowns to the theme.
-- Refined bright-button content and unchecked switches with visible teal tones.
-- Restored readable cyan text on dark notification toasts.
-- Resolves [issue #8](https://github.com/biofects/Enhanced-Biofects/issues/8)
-   and [issue #10](https://github.com/biofects/Enhanced-Biofects/issues/10).
+- Kept dropdown menus aligned with their fields inside dialogs by removing the
+  surface backdrop filter that changed fixed-position coordinate handling.
+- Resolves [issue #11](https://github.com/biofects/Enhanced-Biofects/issues/11).
 
 See [CHANGELOG.md](CHANGELOG.md) for the release history.
 

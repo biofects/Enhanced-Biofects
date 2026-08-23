@@ -6,7 +6,6 @@ Enhanced-Biofects:
   iron-overlay-backdrop-opacity: 1
   iron-overlay-backdrop-background-color: rgba(0, 0, 0, 0.5)
   ha-dialog-surface-background: "rgba(0, 15, 30, 0.96)"
-  ha-dialog-surface-backdrop-filter: blur(12px)
   ha-dialog-scrim-backdrop-filter: blur(8px)
   ha-bottom-sheet-surface-background: "rgba(0, 15, 30, 0.98)"
   ha-bottom-sheet-scrim-color: "rgba(0, 0, 0, 0.72)"
